@@ -7,5 +7,7 @@ import com.ncs.test.member.model.vo.Member;
 
 @Mapper
 public interface MemberDAO {
-	public int signUp (Member member);
+	//public int signUp (Member member);
+	public int idDupCheck(String memberId);
+
 }

@@ -11,12 +11,21 @@ import lombok.Setter;
 
 @Service
 public class MemberServiceImpl implements MemberService{
-	@Setter(onMethod_=@Autowired)
-	private MemberDAO memberDAO;
+//	@Setter(onMethod_=@Autowired)
+//	private MemberDAO memberDAO;
+//	
+//	@Override
+//	public int signUp(Member member) {
+//		int signUp = memberDAO.signUp(member);
+//		return signUp;
+//	}
 	
+	@Setter(onMethod_ = @Autowired)
+	private MemberDAO memberDAO;
+
 	@Override
-	public int signUp(Member member) {
-		int signUp = memberDAO.signUp(member);
-		return signUp;
+	public int idDupCheck(String memberId) {
+		return memberDAO.idDupCheck(memberId);
 	}
+
 }

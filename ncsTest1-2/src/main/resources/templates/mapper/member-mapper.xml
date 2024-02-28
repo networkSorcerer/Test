@@ -6,10 +6,8 @@
 		<result column="MEMBER_NM" property="memberName"/>
 	</resultMap>
 	
-	<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
-		select
-			MEMBER_ID, MEMBER_NM
-			from MEMBER
-			where MEMBER_ID = #{memberId} and MEMBER_PWD =#{memberPwd}
+	<select id="idDupCheck" parameterType="Member" resultType="int">
+		SELECT COUNT(*) FROM MEMBER WHERE MEMBER_ID = #{memberId}
 	</select>
+
 </mapper>
