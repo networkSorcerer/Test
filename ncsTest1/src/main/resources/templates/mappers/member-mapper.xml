@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ncs.test.member.model.dao.MemberDAO">
+	<resultMap type="Member" id="memberResultSet">
+		<id column="MEMBER_ID" property="memberId"/>
+		<result column="MEMBER_NM" property="memberName"/>	
+	</resultMap>
+	
+	
+	<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
+		select
+			MEMBER_ID, MEMBER_NM
+		from MEMBER
+		where MEMBER_ID = #{memberId} and MEMBER_PWD = #{memberPwd}
+	</select>
+</mapper>
