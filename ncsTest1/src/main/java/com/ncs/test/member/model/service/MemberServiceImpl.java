@@ -14,8 +14,8 @@ public class MemberServiceImpl implements MemberService {
 	private MemberDAO memberDAO;
 	
 	@Override
-	public Member signUp(Member member) {
-		Member signUp = memberDAO.signUp(member);
+	public Member loginMember(Member member) {
+		Member signUp = memberDAO.loginMember(member);
 		return signUp;
 	}
 

@@ -34,7 +34,7 @@ public class MemberController {
 	@PostMapping("/login")
 	public String memberLogin(Member member, Model model, RedirectAttributes ras) {
 		log.info("member: " + member);
-		Member signUp = memberService.signUp(member);
+		Member signUp = memberService.loginMember(member);
 		if(signUp != null) {
 			model.addAttribute("signUp", signUp);
 		}else {

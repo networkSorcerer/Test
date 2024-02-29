@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<script src="/resources/js/jquery-3.7.1.min.js"></script>
+		<script src="/resources/include/js/jquery-3.7.1.min.js"></script>
 		<script>
 			$(function(){
 				let errorMsg = "${errorMsg }";
@@ -29,7 +29,7 @@
 		</script>
 	</head>
 	<body>
-		<c:if test="${empty loginMember }">
+		<c:if test="${empty signUp }">
 		<form id="loginForm">
 			<label>ID : </label><input type="text" name="memberId"><br>
 			<label>PWD : </label><input type="password" name="memberPwd"><br>
@@ -37,8 +37,8 @@
 		</form>
 		</c:if>
 		
-		<c:if test="${!empty loginMember }">
-			<h3>${loginMember.memberName }님 환영합니다</h3>
+		<c:if test="${!empty signUp }">
+			<h3>${signUp.memberName }님 환영합니다</h3>
 			<button type="button" id="logoutBtn">로그아웃</button>
 		</c:if>
 	</body>
