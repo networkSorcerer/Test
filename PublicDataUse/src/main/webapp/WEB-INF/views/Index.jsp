@@ -43,8 +43,19 @@ pageEncoding="UTF-8"%>
 				const itemArr = data.response.body.items;		
 				let value = "";		
 				for(let i in itemArr){		
-				// for문 안에 있는 내용을 코딩하시오.		
-			}		
+					//console.log(itemArr[i]); 확인 후 주석
+					let item = itemArr[i];
+					value += "<tr>"
+					+ "<td>" + item.stationName + "</td>"
+					+ "<td>" + item.dataTime + "</td>"
+					+ "<td>" + item.khaiValue + "</td>"
+					+ "<td>" + item.pm25Value + "</td>"
+					+ "<td>" + item.coValue + "</td>"
+					+ "<td>" + item.no2Value + "</td>"
+					+ "<td>" + item.so2Value + "</td>"
+					+ "<td>" + item.o3Value + "</td>"
+					+ "</tr>";
+					}		
 				$("#result1 tbody").html(value);		
 					}		
 				})		
